@@ -1,0 +1,30 @@
+<!-- qa/templates/qa/qa_template.html -->
+<form method="post" action="{% url 'qa_view' %}">
+    {% csrf_token %}
+    <div class="div-yt" style="display:flex; justify-content:center;height: 30vh;">
+        <textarea name="context" rows="7" cols="100" id="context">{{context}}</textarea>
+    </div>
+
+    <div style="display:flex; justify-content:center;">
+        <div style="height:33vh;width: 70%;display:flex;
+    padding: 10px 20px;
+    overflow-y: auto;margin-top:5px;flex-direction: column;background: #c6cacd;align-items: center;
+    justify-content: center;">
+
+            <div>
+                <p> <b> Question:</b> {{ question1 }}</p>
+                <p> <b>Answer:</b> {{ answer1 }}</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="display:flex; justify-content:center;margin-top: 20px;">
+        <div style="display:flex; justify-content:center;width:72%;padding: 20px 10px;
+    background: #4f4f4f;">
+            <input type="text" name="question1" id="question1" placeholder="Ask me a question:" style="width: 100%;
+            padding: 5px;"><br>
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+</form>
