@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-rl02$*w9%a9*9bf(a57!2vlf%4v9@zf4xg3ahisib&pl9xro$1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['13.126.210.247','pythondemo.ecovisrkca.com']
+ALLOWED_HOSTS = ['127.0.0.1','pythondemo.ecovisrkca.com']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'myqaapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',   # Use the MySQL database engine
+        'NAME': 'mysql',                      # Name of your MySQL database
+        'USER': 'root',                      # MySQL user
+        'PASSWORD': 'pass@123',                  # MySQL user's password
+        'HOST': 'localhost',                   # Host where MySQL is running (typically 'localhost')
+        'PORT': '',                        # Port for MySQL (default is 3306)
     }
 }
 
@@ -117,7 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
