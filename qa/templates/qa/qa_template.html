@@ -1,7 +1,9 @@
 <!-- qa/templates/qa/qa_template.html -->
- <form method="post" action="{% url 'qa_view' %}">
+
+<form method="post" action="{% url 'qa_view' %}">
     {% csrf_token %}
     <div class="div-yt" style="display:flex; justify-content:center;height: 30vh;">
+
         <textarea name="context" rows="7" cols="100" id="context">{{context}}</textarea>
     </div>
 
@@ -28,6 +30,9 @@
         </div>
     </div>
 </form>
-
-
-
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="txt_file">
+    <!-- Add other form fields -->
+    <button type="submit">Submit</button>
+</form>
