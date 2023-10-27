@@ -1,3 +1,4 @@
+#Old Code
 """from django.shortcuts import render
 from textblob import TextBlob
 from django.http import HttpResponse
@@ -93,7 +94,7 @@ def qa_view(request):
     return render(request, 'qa/qa_template.html', {'context': ''})
 """
 
-
+#Updated code
 from django.shortcuts import render
 from textblob import TextBlob
 from django.http import HttpResponse

@@ -6,22 +6,6 @@ from textblob import TextBlob
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
-"""class QAData(models.Model):
-    context = models.TextField()
-    question1 = models.CharField(max_length=255, default="Default Answer for Question 1")
-    answer1 = models.TextField()
-    question2 = models.CharField(max_length=255, default="Default Answer for Question 2")
-    answer2 = models.TextField()
-    question3 = models.CharField(max_length=255, default="Default Answer for Question 3")
-    answer3 = models.TextField(default="Default Answer for Question 3")
-    question4 = models.CharField(max_length=255, default="Default Answer for Question 4")
-    answer4 = models.TextField(default="Default Answer for Question 4")
-    question5 = models.CharField(max_length=255, default="Default Answer for Question 5")
-    answer5 = models.TextField(default="Default Answer for Question 5")
-    sentiment_polarity = models.FloatField(null=True, blank=True)
-    sentiment_subjectivity = models.FloatField(null=True, blank=True)
-"""
-
 class QAData(models.Model):
     context = models.TextField()
     question1 = models.CharField(max_length=255)
@@ -67,6 +51,3 @@ class QAData(models.Model):
         tokens = [lemmatizer.lemmatize(word) for word in tokens]
         text = ' '.join(tokens)
         return text
-
-
-
